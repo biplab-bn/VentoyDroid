@@ -3,6 +3,9 @@ package com.ventoydroid.app.ads
 import android.app.Activity
 import android.content.Context
 import android.view.ViewGroup
+import com.google.android.ump.ConsentInformation
+import com.google.android.ump.ConsentRequestParameters
+import com.google.android.ump.UserMessagingPlatform
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
@@ -24,16 +27,27 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
  */
 object Ads {
 
-    // Google official test IDs (developers.google.com/admob/android/test-ads)
-    private const val BANNER_UNIT_ID = "ca-app-pub-3940256099942544/6300978111"
-    private const val INTERSTITIAL_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
+    // Single source of truth for ad IDs. Flip useRealIds after creating the
+    // real units in the AdMob console AND updating APPLICATION_ID in the
+    // manifest — never ship real IDs in debug builds (account-ban risk).
+    private const val USE_REAL_IDS = false
+    private val BANNER_UNIT_ID =
+        if (USE_REAL_IDS) "REPLACE_WITH_REAL_BANNER_UNIT_ID"
+        else "ca-app-pub-3940256099942544/6300978111" // Google test banner
+    private val INTERSTITIAL_UNIT_ID =
+        if (USE_REAL_IDS) "REPLACE_WITH_REAL_INTERSTITIAL_UNIT_ID"
+        else "ca-app-pub-3940256099942544/1033173712" // Google test interstitial
 
     @Volatile private var initialized = false
     private var interstitial: InterstitialAd? = null
 
     @Volatile private var interstitialLoading = false
+    private lateinit var consentInformation: ConsentInformation
 
-    /** Idempotent, safe to call from Application.onCreate. Off-main-thread init. */
+    /**
+     * Idempotent, safe to call from Application.onCreate. Off-main-thread init.
+     * Consent is gathered separately via [gatherConsent] (needs an Activity).
+     */
     fun init(context: Context) {
         if (initialized) return
         initialized = true
@@ -41,6 +55,27 @@ object Ads {
         Thread {
             runCatching { MobileAds.initialize(context) }
         }.start()
+    }
+
+    /**
+     * UMP consent: required for EEA/UK users before any ad request; shows
+     * nothing where consent isn't needed. Fail-silent — ads simply won't
+     * load if consent errors out. Call from the Activity on first launch.
+     */
+    fun gatherConsent(activity: Activity, onDone: () -> Unit = {}) {
+        runCatching {
+            consentInformation = UserMessagingPlatform.getConsentInformation(activity)
+            consentInformation.requestConsentInfoUpdate(
+                activity,
+                ConsentRequestParameters.Builder().build(),
+                {
+                    UserMessagingPlatform.loadAndShowConsentFormIfRequired(activity) {
+                        onDone()
+                    }
+                },
+                { _ -> onDone() },
+            )
+        }.onFailure { onDone() }
     }
 
     // ---- banner ----

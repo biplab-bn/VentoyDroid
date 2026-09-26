@@ -52,10 +52,13 @@
                 android:resource="@xml/device_filter" />
         </activity>
 
+        <!-- Lint can't see the runtime USB-device permission that qualifies
+             connectedDevice for USB-host apps; verified working on API 35. -->
         <service
             android:name=".service.InstallService"
             android:exported="false"
-            android:foregroundServiceType="connectedDevice" />
+            android:foregroundServiceType="connectedDevice"
+            tools:ignore="ForegroundServicePermission" />
     </application>
 
 </manifest>

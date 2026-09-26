@@ -1,0 +1,40 @@
+VentoyDroid turns a plain USB stick into a powerful multiboot drive — right
+from your Android phone. No computer required, no root needed.
+
+Built on the open-source Ventoy boot manager (GPL-3.0), the app writes the
+complete Ventoy bootloader to any USB stick over a standard OTG adapter.
+After that, just copy ISO files onto the stick's data partition and boot any
+PC from it.
+
+FEATURES
+• One-tap Ventoy install to any USB stick over OTG
+• Boots on both UEFI and Legacy BIOS PCs
+• FAT32 and exFAT data partitions — ISOs larger than 4 GiB (Windows 11,
+  big Linux images) supported automatically
+• Copy one or many ISOs during install, or add files later from any PC
+• Safe by design: explicit erase confirmation before anything is written
+• Screen stays awake and installs run in a foreground service, protected
+  from battery-optimization kills
+• No root, no shady tricks — uses the standard Android USB Host API
+• Open source (GPL-3.0)
+
+HOW IT WORKS
+1. Plug a USB stick into your phone (OTG adapter or built-in port)
+2. Pick your ISO files
+3. Tap Install — the stick becomes a Ventoy multiboot drive
+4. Boot any PC from it and choose your ISO from the Ventoy menu
+
+REQUIREMENTS
+• Android 8.0 or newer
+• A phone that supports USB OTG
+• A USB stick (everything on it will be erased)
+
+NOTE
+VentoyDroid is an unofficial frontend for the excellent Ventoy boot manager
+(https://www.ventoy.net) by the Ventoy project. Ventoy is GPL-3.0 software;
+this app bundles its official boot payload unmodified. Please make sure you
+have the legal right to use and distribute any ISO you install.
+
+The app is ad-supported (banner and, after a successful install, an optional
+interstitial). A consent form is shown where required by law. See the
+privacy policy for details.

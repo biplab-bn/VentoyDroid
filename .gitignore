@@ -3,8 +3,16 @@
 /local.properties
 /.idea
 .DS_Store
-/build
+build/
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+
+# Build artifacts kept out of version control
+/*.apk
+/*.aab
+
+# Release signing secrets — never commit
+keystore/
+keystore.properties
