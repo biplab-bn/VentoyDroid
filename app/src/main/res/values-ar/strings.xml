@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">فنتوي درويد</string>
+    <string name="service_notification_channel">التنصيبات</string>
+    <string name="service_notification_channel_title">تنصيب USB</string>
 </resources>

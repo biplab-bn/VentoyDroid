@@ -80,6 +80,7 @@ object UsbScanner {
             if (Build.VERSION.SDK_INT >= 33) {
                 context.registerReceiver(receiver, IntentFilter(ACTION_USB_PERMISSION), Context.RECEIVER_NOT_EXPORTED)
             } else {
+                @Suppress("UnspecifiedRegisterReceiverFlag")
                 context.registerReceiver(receiver, IntentFilter(ACTION_USB_PERMISSION))
             }
             cont.invokeOnCancellation { runCatching { context.unregisterReceiver(receiver) } }

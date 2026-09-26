@@ -1,0 +1,3 @@
+• Ad-supported release: banner + optional interstitial (demo ads in this build)
+• EU consent form (Google UMP) before ads are shown
+• Release build with minification and signing

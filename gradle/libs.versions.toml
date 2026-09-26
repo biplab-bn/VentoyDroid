@@ -11,6 +11,7 @@ appcompat = "1.7.0"
 junit = "4.13.2"
 xz = "1.9"
 playAds = "23.3.0"
+ump = "3.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +31,7 @@ org-tukaani-xz = { group = "org.tukaani", name = "xz", version.ref = "xz" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 play-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "playAds" }
+play-ump = { group = "com.google.android.ump", name = "user-messaging-platform", version.ref = "ump" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 [plugins]

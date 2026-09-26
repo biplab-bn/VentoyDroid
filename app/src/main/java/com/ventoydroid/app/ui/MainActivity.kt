@@ -8,12 +8,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.ventoydroid.app.ads.Ads
 import com.ventoydroid.app.ui.theme.VentoyDroidTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        Ads.gatherConsent(this)
         setContent {
             VentoyDroidTheme {
                 VentoyDroidApp()
