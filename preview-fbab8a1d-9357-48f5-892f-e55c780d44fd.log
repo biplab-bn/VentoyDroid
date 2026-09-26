@@ -1,0 +1,18 @@
+
+> codeforge@0.1.0 dev
+> next dev -p 4319
+
+  ▲ Next.js 14.2.15
+  - Local:        http://localhost:4319
+
+ ✓ Starting...
+ ✓ Ready in 16.8s
+ ○ Compiling / ...
+ ✓ Compiled / in 1353ms (443 modules)
+ GET / 200 in 2615ms
+ GET / 200 in 66ms
+ GET / 200 in 94ms
+ ✓ Compiled /api/projects in 230ms (254 modules)
+ GET /api/projects 200 in 1426ms
+ GET /api/projects 200 in 14ms
+[?25h
