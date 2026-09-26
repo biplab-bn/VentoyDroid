@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.ventoydroid.app-debug-62:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.ventoydroid.app-main-64:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.ventoydroid.app-debug-62:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.ventoydroid.app-main-64:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.ventoydroid.app-debug-62:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.ventoydroid.app-main-64:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.ventoydroid.app-debug-62:/xml_device_filter.xml.flat",
+        "source": "com.ventoydroid.app-main-64:/xml/device_filter.xml"
+    }
+]

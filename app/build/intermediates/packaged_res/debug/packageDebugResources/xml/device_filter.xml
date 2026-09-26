@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- USB mass-storage, subclass 6 (SCSI transparent), protocol 80 (0x50, Bulk-Only).
+     The android resource expects decimal values. Devices that report class 0 at the
+     device level but MSC at the interface level are still handled in-app by the
+     device scanner (UsbDeviceScanner). -->
+<resources>
+    <usb-device class="8" subclass="6" protocol="80" />
+</resources>

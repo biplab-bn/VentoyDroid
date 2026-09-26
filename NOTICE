@@ -1,0 +1,38 @@
+VentoyDroid
+Copyright (C) 2026 The VentoyDroid authors
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+==========================================================================
+Bundled third-party work
+==========================================================================
+
+1. Ventoy payload (app/src/main/assets/ventoy/)
+   - boot.img (GRUB MBR boot code)
+   - core.img.xz (GRUB core image, xz-compressed)
+   - ventoy.disk.img.xz (32 MiB VTOYEFI partition image)
+   - The installer algorithm in com.ventoydroid.app.ventoy.VentoyInstaller
+     is a Kotlin port of INSTALL/tool/VentoyWorker.sh and
+     INSTALL/tool/ventoy_lib.sh from:
+     https://github.com/ventoy/Ventoy (v1.0.99)
+   Copyright (c) longpanda <admin@ventoy.net>
+   License: GPL-3.0-or-later — full text in LICENSE (this repository)
+   Source: https://github.com/ventoy/Ventoy
+   The GRUB components embedded in the payload are themselves GPL-3.0
+   (GRUB: https://www.gnu.org/software/grub/).
+
+2. XZ for Java (org.tukaani:xz)
+   License: Public Domain
+   Source: https://tukaani.org/xz/java.html
+
+==========================================================================
+Verification checksums of the bundled payload are in
+app/src/main/assets/ventoy/CHECKSUMS and re-verified at install time.

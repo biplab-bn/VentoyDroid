@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VentoyDroid</string>
+    <string name="service_notification_channel">installs</string>
+    <string name="service_notification_channel_title">USB installs</string>
+</resources>

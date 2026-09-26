@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ventoydroid.app.fat.ExFatTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-09-26T16:14:07" hostname="DESKTOP-C0PG0SB" time="0.804">
+  <properties/>
+  <testcase name="dentry set checksum excludes the right bytes" classname="com.ventoydroid.app.fat.ExFatTest" time="0.041"/>
+  <testcase name="oversized write fails cleanly without leaving a visible file" classname="com.ventoydroid.app.fat.ExFatTest" time="0.279"/>
+  <testcase name="upcase table is the canonical one" classname="com.ventoydroid.app.fat.ExFatTest" time="0.0"/>
+  <testcase name="boot sector fields match spec offsets" classname="com.ventoydroid.app.fat.ExFatTest" time="0.029"/>
+  <testcase name="two large isos coexist in the root directory" classname="com.ventoydroid.app.fat.ExFatTest" time="0.059"/>
+  <testcase name="format then write and read back a large iso" classname="com.ventoydroid.app.fat.ExFatTest" time="0.383"/>
+  <testcase name="name hash matches exfatprogs algorithm" classname="com.ventoydroid.app.fat.ExFatTest" time="0.001"/>
+  <testcase name="boot checksum sector validates against spec algorithm" classname="com.ventoydroid.app.fat.ExFatTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
