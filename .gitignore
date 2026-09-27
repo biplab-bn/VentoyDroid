@@ -20,7 +20,6 @@ keystore/
 keystore.properties
 
 # Local tooling / agent workspace files — never commit
-.freebuff/
 .kotlin/
 project-id
 *.log
