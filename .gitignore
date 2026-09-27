@@ -12,6 +12,8 @@ local.properties
 # Build artifacts kept out of version control
 /*.apk
 /*.aab
+/ventoy.disk.img
+/ventoy.disk.img.xz
 
 # Release signing secrets — never commit
 keystore/
