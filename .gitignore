@@ -29,3 +29,7 @@ preview-*.log*
 app-screenshot.png
 parse.py
 tools/
+
+# Internal guides — local only, never publish
+HOW-TO-EDIT.md
+PUBLISH-GUIDE.md
