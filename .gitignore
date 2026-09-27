@@ -16,3 +16,14 @@ local.properties
 # Release signing secrets — never commit
 keystore/
 keystore.properties
+
+# Local tooling / agent workspace files — never commit
+.freebuff/
+.kotlin/
+project-id
+*.log
+*.log.err
+preview-*.log*
+app-screenshot.png
+parse.py
+tools/
